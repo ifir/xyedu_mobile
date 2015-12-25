@@ -17,7 +17,12 @@ $colorMaps: (blue:#3296ba,yellow:#f39801,black:#656565);
             transform: translate3d($value);
 }
 
-
+@mixin radius($value...)
+{
+    -webkit-border-radius: $value;
+       -moz-border-radius: $value;
+            border-radius: $value;
+}
 
 html,
 body
@@ -55,6 +60,29 @@ body
 
     content: '';
 }
+.btn
+{
+    color: #222;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.btn-yellow
+{
+    padding: 10px 20px;
+
+    color: map-get($colorMaps,yellow);
+    border: 1px solid map-get($colorMaps,yellow);
+
+    @include radius(5px);
+    @include transition(all 1s ease);
+}
+
+.clicked
+{
+    color: #fff;
+    background: map-get($colorMaps,yellow);
+}
 .container
 {
     overflow-x: hidden;
@@ -63,6 +91,7 @@ body
     width: 100%;
     height: auto;
 }
+/* 导航栏 */
 .navbar
 {
     width: 90%;
@@ -107,7 +136,7 @@ body
     background: map-get($colorMaps,blue);
 }
 
-
+/* 课程页面 */
 .section-course
 {
     margin: 10px 0;
@@ -239,6 +268,8 @@ body
     }
 }
 
+
+/* 页脚 */
 .footer
 {
     color: #fff;
@@ -253,19 +284,129 @@ body
         }
     }
 }
+.section-bg .bg-img{
+	width:90%;
+	margin:0 auto;
+	height:200px;
+	background:url('../img/join-banner.jpg') no-repeat center center;
+	background-size:90% 200px;
+}
 
+.section-join-info
+{
+    .join-line
+    {
+        position: relative;
+        z-index: 10;
+
+        padding: 20px 0;
+
+        border-bottom: 1px solid #ccc;
+        &:before,
+        &:after
+        {
+            position: absolute;
+            left: 50%;
+
+            display: block;
+
+            width: 0;
+            height: 0;
+            margin-left: -20px;
+
+            content: '';
+
+            border-right: 20px solid transparent;
+            border-left: 20px solid transparent;
+        }
+        &:before
+        {
+            z-index: 15;
+            bottom: -19px;
+
+            border-top: 20px solid #fff;
+        }
+        &:after
+        {
+            z-index: 12;
+            bottom: -20px;
+
+            border-top: 20px solid #b8b8b8;
+        }
+    }
+    .baidu-map
+    {
+        width: 100%;
+        height: 350px;
+        margin: 20px 0;
+    }
+    .map-point
+    {
+        width: 100%;
+        height: 100px;
+        margin: 0 auto;
+        .pull-left
+        {
+            line-height: 100px;
+
+            width: 20%;
+            img
+            {
+                vertical-align: middle;
+            }
+        }
+        .pull-right
+        {
+            width: 80%;
+            h3{
+            	margin-top: 25px;
+            }
+            h3,p{
+            	font-size: 14px;
+            }
+            p{
+            	margin-top: 10px;
+                color: #666;
+            }
+        }
+    }
+    .join-contact
+    {
+        margin-bottom:20px;
+        li
+        {
+            float: left;
+			height: 130px;
+            width: 49%;
+			margin-top: 20px;
+            border-right: 1px solid #ccc;
+            font-size: 12px;
+            &:last-child, &:nth-child(2)
+            {
+                border-right: 0;
+            }
+            p{
+            	margin-bottom: 10px;
+            }
+        }
+    }
+}
+/* 遮罩 */
 .mask
 {
     position: fixed;
     z-index: 999999;
-	top:0;
-	left:0;
+    top: 0;
+    left: 0;
+
+    display: none;
+
     width: 100%;
     height: 100%;
 
     background: transparent;
-    display: none;
 }
+/* 侧边栏 */
 .tool-box
 {
     position: absolute;
@@ -273,34 +414,40 @@ body
     top: 0;
     right: 0;
 
+    visibility: hidden;
+
     width: 200px;
     height: 100%;
 
-	visibility:hidden;
     background: #222;
-    li{
-    	padding: 15px 0;
+    li
+    {
+        padding: 15px 0;
     }
-    a{
-    	color:#fff;
+    a
+    {
+        color: #fff;
     }
 }
 
 .main-content
 {
     position: relative;
+    height: 100%;
     z-index: 99999;
 
     background: #fff;
 
-    @include transition(transform 0.5s ease);
+    @include transition(transform .5s ease);
 }
 
-.open{
-	@include translate3d(-200px,0,0);
+.open
+{
+    @include translate3d(-200px,0,0);
 }
-.vis{
-	visibility:visible;
+.vis
+{
+    visibility: visible;
 }
 
 @media screen and (max-width: 320px)
