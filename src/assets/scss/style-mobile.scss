@@ -1,4 +1,24 @@
 $colorMaps: (blue:#3296ba,yellow:#f39801,black:#656565);
+@mixin transition($value...)
+{
+    -webkit-transition: $value;
+       -moz-transition: $value;
+        -ms-transition: $value;
+         -o-transition: $value;
+            transition: $value;
+}
+
+@mixin translate3d($value...)
+{
+    -webkit-transform: translate3d($value);
+       -moz-transform: translate3d($value);
+        -ms-transform: translate3d($value);
+         -o-transform: translate3d($value);
+            transform: translate3d($value);
+}
+
+
+
 html,
 body
 {
@@ -79,7 +99,8 @@ body
     }
 }
 
-.section-banner
+.section-banner,
+.section-bg
 {
     height: 200px;
 
@@ -99,11 +120,11 @@ body
     margin: 10px auto;
     a
     {
+        font-size: 22px;
+
         display: block;
 
         color: #fff;
-
-        font-size: 22px;
     }
     .color-dx
     {
@@ -130,9 +151,9 @@ body
         {
             width: 30px;
             height: 30px;
+            margin-top: -3px;
 
             vertical-align: middle;
-            margin-top: -3px;
         }
     }
     .color-gy
@@ -166,10 +187,9 @@ body
         {
             width: 30px;
             height: 30px;
+            margin-top: -5px;
 
             vertical-align: middle;
-
-            margin-top: -5px;
         }
     }
     .color-mc
@@ -203,9 +223,9 @@ body
         {
             width: 30px;
             height: 30px;
+            margin-top: -5px;
 
             vertical-align: middle;
-            margin-top: -5px;
         }
     }
     .color-xl
@@ -219,8 +239,69 @@ body
     }
 }
 
+.footer
+{
+    color: #fff;
+    .container
+    {
+        height: 50px;
 
+        background: map-get($colorMaps,blue);
+        p
+        {
+            line-height: 25px;
+        }
+    }
+}
 
+.mask
+{
+    position: fixed;
+    z-index: 999999;
+	top:0;
+	left:0;
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+    display: none;
+}
+.tool-box
+{
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+
+    width: 200px;
+    height: 100%;
+
+	visibility:hidden;
+    background: #222;
+    li{
+    	padding: 15px 0;
+    }
+    a{
+    	color:#fff;
+    }
+}
+
+.main-content
+{
+    position: relative;
+    z-index: 99999;
+
+    background: #fff;
+
+    @include transition(transform 0.5s ease);
+}
+
+.open{
+	@include translate3d(-200px,0,0);
+}
+.vis{
+	visibility:visible;
+}
 
 @media screen and (max-width: 320px)
 {

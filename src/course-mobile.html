@@ -17,7 +17,7 @@
 	<![endif]-->
 </head>
 <body>
-	<div>
+	<div id="main-content" class="main-content">
 		<header>
 			<nav class="navbar">
 				<ul>
@@ -26,8 +26,8 @@
 							<img src="dist/img/logo.png" alt="logo">
 						</a>
 					</li>
-					<li class="text-right">
-						<a href="#">
+					<li class="text-right" id="tool">
+						<a href="javascript:;">
 							<img src="dist/img/tool.png" alt="tool">
 						</a>
 					</li>
@@ -80,12 +80,25 @@
 				</a>
 			</div>
 		</div>
-		<footer>
-			<div></div>
+		<footer class="footer">
+			<div class="container text-center">
+				<p>天津西游教育XXXX&nbsp;津ICP：00000000</p>
+				<p>技术支持：中企九胜</p>
+			</div>
 		</footer>
 	</div>
-
+	<div class="mask" id="mask"></div>
+	<div class="tool-box" id="tool-box">
+		<ul class="clearfix text-center">
+			<li><a href="#">导航一</a></li>
+			<li><a href="#">导航二</a></li>
+			<li><a href="#">导航三</a></li>
+			<li><a href="#">导航四</a></li>
+			<li><a href="#">导航五</a></li>
+		</ul>
+	</div>
 
 	<script type="text/javascript" src="dist/js/zepto.min.js"></script>
+	<script type="text/javascript" src="dist/js/app-mobile.js"></script>
 </body>
 </html>
