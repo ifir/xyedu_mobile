@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=0.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" /><!-- IOS6全屏 Chrome高版本全屏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!--隐藏状态栏/设置状态栏颜色-->
+    <meta name="format-detection" content="telephone=no; email=no" /><!--忽略自动识别数字为电话号码，邮箱账号-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><!-- 禁止百度强制转码 -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jw2vZZzQKknACIcvRqAn7g5B"></script>
+	<title>联系我们</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="dist/css/style-mobile.css">
+	<!--[if lt IE 9]>
+	<script src="dist/js/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="main-content" class="main-content">
+		<header>
+			<nav class="navbar">
+				<ul>
+					<li class="text-left">
+						<a href="index.html">
+							<img src="dist/img/logo.png" alt="logo">
+						</a>
+					</li>
+					<li class="text-right">
+						<a href="javascript:;" id="tool">
+							<img src="dist/img/tool.png" alt="tool">
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="container section-bg">
+			<div class="bg-img"></div>
+		</div>
+
+
+		<div class="section-join-info">
+			<div class="text-center join-line">
+				<a href="contact-mobile.html" class="btn btn-yellow clicked" type="button" style="margin-right:20px;">联系我们</a>
+				<a href="job-mobile.html" class="btn btn-yellow" type="button" style="margin-left:20px;">人才招聘</a>
+			</div>
+		<!-- 联系我们 -->
+		<div class="container">
+			<!-- 百度地图 -->
+			<div class="baidu-map" id="allmap"></div>
+			<div class="map-point clearfix">
+				<div class="pull-left text-center">
+					<img src="dist/img/weizhi.png" alt="weizhi"></div>
+				<div class="pull-right text-center">
+					<h3>天津市南开区鞍山西道信诚大厦2607</h3>
+					<p>
+						Tianjin City, Nankai District Anshan West Road, Chengxin building 2607
+					</p>
+				</div>
+			</div>
+
+			<div class="join-contact">
+				<ul class="clearfix text-center">
+					<li>
+						<img src="dist/img/join-qq.png" alt="">
+						<p>QQ</p>
+						<p class="text-muted">3264094367 / 2898235792</p>
+					</li>
+					<li>
+						<img src="dist/img/join-phone.png" alt="">
+						<p>座机号</p>
+						<p class="text-muted">022－83586177</p>
+					</li>
+					<li>
+						<img src="dist/img/join-telephone.png" alt="">
+						<p>手机号</p>
+						<p class="text-muted">18622996008</p>
+					</li>
+					<li>
+						<img src="dist/img/join-email.png" alt="">
+						<p>邮箱</p>
+						<p class="text-muted">xiyou@xiyoumba.com</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+
+		<footer class="footer">
+			<div class="container text-center">
+				<p>天津西游教育XXXX&nbsp;津ICP：00000000</p>
+				<p>技术支持：中企九胜</p>
+			</div>
+		</footer>
+	</div>
+	<div class="mask" id="mask"></div>
+	<div class="tool-box" id="tool-box">
+		<ul class="clearfix text-center">
+			<li><a href="#">导航一</a></li>
+			<li><a href="#">导航二</a></li>
+			<li><a href="#">导航三</a></li>
+			<li><a href="#">导航四</a></li>
+			<li><a href="#">导航五</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="dist/js/zepto.min.js"></script>
+	<script type="text/javascript" src="dist/js/app-mobile.js"></script>
+	<script type="text/javascript">
+		// 百度地图API功能
+		var map = new BMap.Map("allmap");    // 创建Map实例
+		var point = new BMap.Point(117.171697,39.119643);//创建初始位置坐标点
+		map.centerAndZoom(point, 19);  // 初始化地图,设置中心点坐标和地图级别
+		map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+		map.setCurrentCity("天津");          // 设置地图显示的城市 此项是必须设置的
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+		var marker = new BMap.Marker(point);  // 创建标注
+		map.addOverlay(marker);               // 将标注添加到地图中
+		marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+	</script>
+</body>
+</html>
