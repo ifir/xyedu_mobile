@@ -26,8 +26,8 @@
 							<img src="dist/img/logo.png" alt="logo">
 						</a>
 					</li>
-					<li class="text-right" id="tool">
-						<a href="javascript:;">
+					<li class="text-right">
+						<a href="javascript:;" id="tool">
 							<img src="dist/img/tool.png" alt="tool">
 						</a>
 					</li>
@@ -39,8 +39,88 @@
 		</div>
 		<div class="section-join-info">
 			<div class="text-center join-line">
-				<a href="contact-mobile.html" class="btn btn-yellow clicked" type="button" style="margin-right:20px;">联系我们</a>
-				<a href="job-mobile.html" class="btn btn-yellow" type="button" style="margin-left:20px;">人才招聘</a>
+				<a href="contact-mobile.html" class="btn btn-yellow" type="button" style="margin-right:20px;">联系我们</a>
+				<a href="job-mobile.html" class="btn btn-yellow clicked" type="button" style="margin-left:20px;">人才招聘</a>
+			</div>
+			<div class="container job-box">
+				<div class="job-box-ul" id="job-box-ul">
+					<div class="job-box-li">
+						<span class="icon-span"></span>
+						<span class="job-name">课程顾问</span>
+						<span class="job-num">招聘人数：2人</span>
+						<span class="icon-span2"></span>
+					</div>
+					<div class="job-explain">
+						<div class="job-explain-require">
+							<span>发布时间:2015-12-15</span>
+							<span>学历要求:本科以上</span>
+						</div>
+						<div class="job-explain-require">
+							<span>薪资待遇:面谈</span>
+							<span>工作经验:3年以上</span>
+						</div>
+						<div class="job-explain-info">
+							<h4>职位描述：</h4>
+							<p>1.招生老师负责学校的市场运营，接待学生的咨询，报名。</p>
+							<p>2.统计工作，设定营销方案，按月完成相应的月度招生指标。</p>
+							<p>3.完成上级部门和领导交办的其它工作。</p>
+							<p>4.招生老师可享受各项晋升待遇。</p>
+							<h4>招聘要求：</h4>
+							<p>1. 大专及以上学历，营销相关专业，热爱教育行业，有一年以上销售工作经验；</p>
+							<p>2.统计工作，设定营销方案，按月完成相应的月度招生指标。</p>
+							<p>3.具有良好的沟通协调能力、说服能力、谈判能力，有一定电话销售技巧，有较强的抗压能力及客户分析能力；</p>
+							<p>4.具有一定的撰写能力，市场预判、分析和开发能力，了解客户心理；</p>
+							<p>5.相貌端庄，举止大方得体，普通话标准，亲和力较强，善于沟通。</p>
+							<div class="text-center">
+								<input type="button" class="btn btn-yellow clicked apply" value="申请该职位">
+							</div>
+						</div>
+					</div>
+					<div class="job-box-li">
+						<span class="icon-span"></span>
+						<span class="job-name">教务主任</span>
+						<span class="job-num">招聘人数：1人</span>
+						<span class="icon-span2"></span>
+					</div>
+					<div class="job-explain">
+						<div class="job-explain-require">
+							<span>发布时间：2015-12-15</span>
+							<span>学历要求：本科以上</span>
+						</div>
+						<div class="job-explain-require">
+							<span>薪资待遇：面谈</span>
+							<span>工作经验：3年以上</span>
+						</div>
+						<div class="job-explain-info">
+							<h4>教务主任</h4>
+							<div class="text-center">
+								<input type="button" class="btn btn-yellow clicked apply" value="申请该职位">
+							</div>
+						</div>
+					</div>
+					<div class="job-box-li">
+						<span class="icon-span"></span>
+						<span class="job-name">考研英语教师</span>
+						<span class="job-num">招聘人数：1人</span>
+						<span class="icon-span2"></span>
+					</div>
+					<div class="job-explain">
+						<div class="job-explain-require">
+							<span>发布时间：2015-12-15</span>
+							<span>学历要求：本科以上</span>
+						</div>
+						<div class="job-explain-require">
+							<span>薪资待遇：面谈</span>
+							<span>工作经验：3年以上</span>
+						</div>
+						<div class="job-explain-info">
+							<h4>考研英语教师</h4>
+							<div class="text-center">
+								<input type="button" class="btn btn-yellow clicked apply" value="申请该职位">
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<footer class="footer">
@@ -50,6 +130,20 @@
 			</div>
 		</footer>
 	</div>
+	<!-- 弹出框 -->
+	<div class="mask-popup"></div>
+	<div class="popup">
+		<div class="popup-box">
+			<div class="text-center">
+				<p>请发送简历至邮箱：</p>
+				<p>xiyou@xiyoumba.com</p>
+			</div>
+			<div class="text-center">
+				<input type="button" class="btn btn-yellow close-btn" value="关闭">
+			</div>
+		</div>
+	</div>
+	<!-- 侧边栏 -->
 	<div class="mask" id="mask"></div>
 	<div class="tool-box" id="tool-box">
 		<ul class="clearfix text-center">
