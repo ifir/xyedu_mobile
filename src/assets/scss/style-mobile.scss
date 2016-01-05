@@ -23,11 +23,18 @@ $colorMaps: (blue:#3296ba,yellow:#f39801,black:#656565);
        -moz-border-radius: $value;
             border-radius: $value;
 }
-
+@mixin shadow($value...)
+{
+    -webkit-box-shadow: $value;
+       -moz-box-shadow: $value;
+            box-shadow: $value;
+}
 html,
 body
 {
     height: 100%;
+
+    background: #fff;
 }
 .text-center
 {
@@ -85,45 +92,73 @@ body
 }
 .container
 {
-    overflow-x: hidden;
-    overflow-y: auto;
-
     width: 100%;
     height: auto;
 }
-/* 导航栏 */
-.navbar
+.main-content
 {
-    width: 90%;
-    height: 50px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 99999;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding-top: 50px;
 
     background: #fff;
-    ul
-    {
-        overflow: hidden;
-    }
-    li
-    {
-        float: left;
 
-        width: 50%;
+    @include transition(transform .5s ease);
+}
+/* 导航栏 */
+.nav-header
+{
+    position: absolute;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: #fff;
+
+    @include shadow(0 1px 2px #ccc);
+    @include transition(transform .5s ease);
+    .navbar
+    {
+        width: 90%;
         height: 50px;
-    }
-    .text-left
-    {
-        img
+        margin: 0 auto;
+
+        background: #fff;
+        ul
         {
-            width: 110px;
-            margin: 5px 0;
+            overflow: hidden;
         }
-    }
-    .text-right
-    {
-        img
+        li
         {
-            width: 30px;
-            margin-top: 14px;
+            float: left;
+
+            width: 50%;
+            height: 50px;
+        }
+        .text-left
+        {
+            img
+            {
+                width: 110px;
+                margin: 5px 0;
+            }
+        }
+        .text-right
+        {
+            img
+            {
+                width: 30px;
+                margin-top: 14px;
+            }
         }
     }
 }
@@ -135,7 +170,90 @@ body
 
     background: map-get($colorMaps,blue);
 }
+/* 首页 */
+.section-bgimg
+{
+    padding: 10px 0 20px 0;
 
+    background: url('../../dist/img/bg1.jpg') no-repeat center center;
+    background-size: cover;
+    .bg-title
+    {
+        font-size: 1.5em;
+        font-weight: bolder;
+
+        margin: 0 0 20px 0;
+
+        color: map-get($colorMaps,yellow);
+    }
+    article > p
+    {
+        font-size: .85em;
+        font-weight: bolder;
+
+        margin: 10px 0;
+
+        text-align: center;
+
+        color: map-get($colorMaps,blue);
+    }
+}
+/* 面试笔试 */
+.section-aspect
+{
+    background: #fff;
+    .interview-img,
+    .write-img
+    {
+        width: 100%;
+        height: 343px;
+        margin-bottom: 10px;
+        article
+        {
+            width: 260px;
+            margin: 0 auto;
+            padding: 60px 10px 0 10px;
+            h3
+            {
+                font-size: 1.5em;
+                line-height: 80px;
+
+                color: #fff;
+            }
+            section
+            {
+                font-size: .9em;
+                line-height: 20px;
+
+                color: #fff;
+            }
+            footer
+            {
+                font-size: .8em;
+                line-height: 20px;
+
+                padding: 30px 10px 0 20px;
+
+                color: #525252;
+            }
+        }
+    }
+    .interview-img
+    {
+        background: url('../../dist/img/mianshi.png') no-repeat center center;
+        background-size: 280px 343px;
+    }
+    .write-img
+    {
+        background: url('../../dist/img/bishi.png') no-repeat center center;
+        background-size: 280px 343px;
+    }
+}
+/* 金牌讲师 */
+.section-teachers{
+    padding: 10px 0 20px 0;
+    background: #f4f4f4;
+}
 /* 课程页面 */
 .section-course
 {
@@ -569,8 +687,9 @@ body
     .popup-box
     {
         font-size: 16px;
-        p{
-        	margin:10px 0;
+        p
+        {
+            margin: 10px 0;
         }
     }
 }
@@ -598,17 +717,7 @@ body
     }
 }
 
-.main-content
-{
-    position: relative;
-    z-index: 99999;
 
-    height: 100%;
-
-    background: #fff;
-
-    @include transition(transform .5s ease);
-}
 
 .open
 {

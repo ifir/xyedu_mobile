@@ -1,12 +1,12 @@
 $(function(){
 	//侧边栏事件
 	$('#tool').on('click', function(){
-		$('#main-content').addClass('open');
+		$('#main-content,#nav-header').addClass('open');
 		$('#tool-box').addClass('vis');
 		$('#mask').show().addClass('open');
 	})
 	$('#mask').on('click', function(){
-		$('#main-content').removeClass('open');
+		$('#main-content,#nav-header').removeClass('open');
 		setTimeout(function(){
 			$('#tool-box').removeClass('vis');
 		},500);
