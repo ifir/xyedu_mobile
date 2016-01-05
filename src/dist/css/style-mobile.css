@@ -212,6 +212,76 @@ body {
   background: #f4f4f4;
 }
 
+.section-teachers .photo-box {
+  width: 100%;
+}
+
+.h1-line {
+  font-size: 32px;
+  font-weight: normal;
+  position: relative;
+  padding-bottom: 60px;
+  color: #3296ba;
+}
+
+.h1-line:before, .h1-line:after {
+  position: absolute;
+  left: 50%;
+  content: '';
+}
+
+.h1-line:before {
+  z-index: 12;
+  top: 66px;
+  width: 130px;
+  height: 5px;
+  margin-left: -65px;
+  background: #f39801;
+}
+
+.h1-line:after {
+  z-index: 2;
+  top: 69px;
+  width: 320px;
+  height: 1px;
+  margin-left: -160px;
+  background: #ccc;
+}
+
+.section-teachers .photo-info {
+  width: 50%;
+  color: #3296ba;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.section-teachers .photo-info .head-photo {
+  width: 100%;
+}
+
+.section-teachers .photo-info .head-photo img {
+  width: 100%;
+}
+
+.section-teachers .photo-info .introduce {
+  padding: 0 20px;
+}
+
+.section-teachers .photo-info .introduce h3 {
+  font-size: 25px;
+  font-weight: normal;
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #f39801;
+}
+
+.section-teachers .photo-info .introduce p {
+  margin: 20px 0;
+  font-size: .8em;
+}
+
 /* 课程页面 */
 .section-course {
   margin: 10px 0;

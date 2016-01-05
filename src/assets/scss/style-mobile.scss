@@ -29,6 +29,12 @@ $colorMaps: (blue:#3296ba,yellow:#f39801,black:#656565);
        -moz-box-shadow: $value;
             box-shadow: $value;
 }
+@mixin sizing
+{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
 html,
 body
 {
@@ -250,9 +256,91 @@ body
     }
 }
 /* 金牌讲师 */
-.section-teachers{
+.section-teachers
+{
     padding: 10px 0 20px 0;
+
     background: #f4f4f4;
+    .photo-box
+    {
+        width: 100%;
+    }
+    @at-root .h1-line
+    {
+        font-size: 32px;
+        font-weight: normal;
+
+        position: relative;
+
+        padding-bottom: 60px;
+
+        color: map-get($colorMaps,blue);
+        &:before,
+        &:after
+        {
+            position: absolute;
+            left: 50%;
+
+            content: '';
+        }
+        &:before
+        {
+            z-index: 12;
+            top: 66px;
+
+            width: 130px;
+            height: 5px;
+            margin-left: -65px;
+
+            background: map-get($colorMaps,yellow);
+        }
+        &:after
+        {
+            z-index: 2;
+            top: 69px;
+
+            width: 320px;
+            height: 1px;
+            margin-left: -160px;
+
+            background: #ccc;
+        }
+    }
+    .photo-info
+    {
+        width: 50%;
+
+        color: map-get($colorMaps,blue);
+        border: 1px solid #ccc;
+
+        @include sizing;
+        .head-photo
+        {
+            width: 100%;
+            img
+            {
+                width: 100%;
+            }
+        }
+        .introduce
+        {
+            padding: 0 20px;
+            h3
+            {
+                font-size: 25px;
+                font-weight: normal;
+
+                margin: 0;
+                padding: 20px 0;
+
+                border-bottom: 1px solid map-get($colorMaps,yellow);
+            }
+            p{
+                margin:20px 0;
+                font-size: .8em;
+            }
+        }
+    }
 }
 /* 课程页面 */
 .section-course
