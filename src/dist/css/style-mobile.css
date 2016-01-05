@@ -280,6 +280,30 @@ body {
 .section-teachers .photo-info .introduce p {
   margin: 20px 0;
   font-size: .8em;
+  line-height: 16px;
+}
+
+/* 独家保障 */
+.section-ensure span {
+  margin: 0 5px;
+  color: #3296ba;
+}
+
+.section-ensure .ensure-box {
+  margin: 40px 0 20px 0;
+}
+
+.section-ensure .ensure-box .pull-left {
+  width: 33.333333%;
+  margin-bottom: 20px;
+}
+
+.section-ensure .ensure-box img {
+  width: 100%;
+}
+
+.section-ensure .ensure-box h4 {
+  color: #3296ba;
 }
 
 /* 课程页面 */
