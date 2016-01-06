@@ -168,6 +168,43 @@ body
         }
     }
 }
+/* 电话咨询 */
+.nav-consult{
+    position: absolute;
+    z-index: 100000;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: #fff;
+    height: 50px;
+    overflow: hidden;
+    @include shadow(0 1px 2px #ccc);
+    @include transition(transform .5s ease);
+    a{
+        color: #fff;
+        font-size: 1.1em;
+    }
+    .msg-consult, .tel-consult{
+        width: 50%;
+        display:block;
+        height: 50px;
+        line-height: 50px;
+        img{
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+    }
+    .msg-consult{
+         background:map-get($colorMaps,yellow);
+    }
+    .tel-consult{
+        background:map-get($colorMaps,blue);
+    }
+}
+
 
 .section-banner,
 .section-bg

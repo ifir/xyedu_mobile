@@ -127,6 +127,52 @@ body {
   margin-top: 14px;
 }
 
+/* 电话咨询 */
+.nav-consult {
+  position: absolute;
+  z-index: 100000;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  height: 50px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 1px 2px #ccc;
+  -moz-box-shadow: 0 1px 2px #ccc;
+  box-shadow: 0 1px 2px #ccc;
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -ms-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+.nav-consult a {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.nav-consult .msg-consult, .nav-consult .tel-consult {
+  width: 50%;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+}
+
+.nav-consult .msg-consult img, .nav-consult .tel-consult img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.nav-consult .msg-consult {
+  background: #f39801;
+}
+
+.nav-consult .tel-consult {
+  background: #3296ba;
+}
+
 .section-banner,
 .section-bg {
   height: 200px;
