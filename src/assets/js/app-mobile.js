@@ -36,18 +36,40 @@ $(function(){
 	$('.mask-popup, .close-btn').on('click', function (){
 		var popup = $('.popup, .mask-popup');
 		popup.hide();
+	});
+
+	//院校咨询&教育咨询
+	$('#school-btn, #edu-btn').on('click', function(e){
+		var listItems = $(this).find('.select-list');
+		listItems.addClass('show');
+		listItems.find('li').each(function(index){
+			var con =$('#all-news-box .hide');
+			$(this).on('click', function(e){
+				$('.select-list').removeClass('show');
+				con.removeClass('show');
+				con.eq(index).addClass('show');
+				e.stopPropagation();
+			})
+		});
+		e.stopPropagation();
+	});
+	$('#all-news-box').on('click', 'li', function(){
+		$('#all-news-box').removeClass('show');
+		$('#all-news-info').addClass('show');
 	})
-	//轮播图
-	$('#swiper-container,#swiper-container img').css('height','200px')
-	var swiper = new Swiper('.swiper-container', {
-	 pagination: '.swiper-pagination',
-	 nextButton: '.swiper-button-next',
-	 prevButton: '.swiper-button-prev',
-	 paginationClickable: true,
-	 centeredSlides: true,
-	 autoplay: 5000,
-	 loop: true,
-	 autoplayDisableOnInteraction: false
+	/*$('.select-list').on('click', 'li', function(e){
+		$('.select-list').removeClass('show');
+		$('#all-news-box').removeClass('show');
+		$('#all-news-info').addClass('show');
+		e.stopPropagation();
+	});*/
+
+	$('#close-news').on('click', function(){
+		$('#all-news-info').removeClass('show');
+		$('#all-news-box').addClass('show');
+	});
+	$('body').on('click', function(){
+		$('.select-list').removeClass('show');
 	});
 
 })

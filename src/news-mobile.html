@@ -65,14 +65,29 @@
             </div>
 		</div>
 		<div class="container section-nav-news">
-			<div class="pull-left text-center">
+			<div class="pull-left text-center" id="school-btn">
 				<span>院校咨询</span>
+				<div class="select-list text-center hide">
+					<ul>
+						<li><a href="javascript:;">天津院校</a></li>
+						<li><a href="javascript:;">北京院校</a></li>
+						<li><a href="javascript:;">其他院校</a></li>
+					</ul>
+				</div>
 			</div>
-			<div class="pull-left text-center">
+			<div class="pull-left text-center" id="edu-btn">
 				<span>教育咨询</span>
+				<div class="select-list text-center hide">
+					<ul>
+						<li><a href="javascript:;">天津院校</a></li>
+						<li><a href="javascript:;">北京院校</a></li>
+						<li><a href="javascript:;">其他院校</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class="container section-new-box" id="all-news-box">
+		
+		<div class="container section-new-box hide show" id="all-news-box">
 			<div class="hide show">
 				<ul>
 					<li>
@@ -126,6 +141,16 @@
 				</ul>
 			</div>
 		</div>
+		<div class="container section-new-info hide" id="all-news-info">
+			<div style="padding:0 10px;">
+				<span id="close-news">X</span>
+				<h3 class="text-center">俄罗斯前首富涉3桩命案 遭俄全球通缉</h3>
+				<p>俄罗斯前首富、著名金融寡头霍多尔科夫斯基又摊上大事了！</p>
+				<p>两年前，他曾因俄总统普京特赦令而出狱，如今却再度遭到通缉，而且罪名更是升级到谋杀这样的重罪。</p>
+				<p>据俄罗斯卫星网23日消息，俄联邦调查委员会当天宣布了这一消息。调查委员会发言人马尔金表示，将在霍多尔科夫斯基缺席的情况下，对其下发逮捕令；并同时将其列入了海外追逃的名单之中。</p>
+				<p>据今日俄罗斯报道，早在本月月初，俄罗斯警方就已经展开了对霍多尔科夫斯基的调查。据称，他曾于1998年间，策划并实行了对西伯利亚地区城市涅夫捷尤甘斯克市长佩图科霍夫的谋杀。此外，霍多尔科夫斯基还涉嫌其他两桩谋杀未遂案。</p>
+			</div>
+		</div>
 		<footer class="footer">
 			<div class="container text-center">
 				<p>天津西游教育XXXX&nbsp;津ICP：00000000</p>
@@ -147,5 +172,19 @@
 	<script type="text/javascript" src="dist/js/zepto.min.js"></script>
 	<script type="text/javascript" src="dist/js/swiper-3.2.7.jquery.min.js"></script>
 	<script type="text/javascript" src="dist/js/app-mobile.js"></script>
+	<script type="text/javascript">
+		//轮播图
+		$('#swiper-container,#swiper-container img').css('height','200px');
+		var swiper = new Swiper('.swiper-container', {
+		 pagination: '.swiper-pagination',
+		 nextButton: '.swiper-button-next',
+		 prevButton: '.swiper-button-prev',
+		 paginationClickable: true,
+		 centeredSlides: true,
+		 autoplay: 5000,
+		 loop: true,
+		 autoplayDisableOnInteraction: false
+		});
+	</script>
 </body>
 </html>

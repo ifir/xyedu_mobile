@@ -234,6 +234,114 @@ body
 
     background: map-get($colorMaps,blue);
 }
+.section-banner
+{
+    h2
+    {
+        font-size: 1.2em;
+
+        padding: 15px 0;
+
+        color: #fff;
+    }
+    p
+    {
+        font-size: 1em;
+
+        padding: 5px 0;
+
+        color: #fff;
+    }
+    .his-box
+    {
+        position: relative;
+
+        width: 90%;
+        height: 100px;
+        margin: 0 auto;
+        span
+        {
+            position: absolute;
+            z-index: 99;
+            top: 50%;
+
+            display: block;
+
+            width: 20px;
+            height: 20px;
+
+            background: map-get($colorMaps,yellow);
+
+            @include radius(50%);
+            label
+            {
+                font-size: .8em;
+
+                position: absolute;
+                top: -20px;
+                left: 50%;
+
+                margin-left: -24px;
+
+                color: map-get($colorMaps,yellow);
+            }
+            .center-label
+            {
+                font-size: 1.1em;
+                font-weight: bolder;
+
+                top: -30px;
+
+                margin-left: -35px;
+            }
+        }
+        hr
+        {
+            position: absolute;
+            z-index: 33;
+            top: 42px;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+
+            border: none;
+            border-top: 1px dashed map-get($colorMaps,yellow);
+        }
+        .left
+        {
+            left: 0;
+
+            margin-top: -10px;
+        }
+        .left-center
+        {
+            left: 25%;
+
+            margin: -10px 0 0 -10px;
+        }
+        .center
+        {
+            left: 50%;
+
+            width: 28px;
+            height: 28px;
+            margin: -14px 0 0 -14px;
+        }
+        .right-center
+        {
+            right: 25%;
+
+            margin: -10px 0 0 -10px;
+        }
+        .right
+        {
+            right: 0;
+
+            margin-top: -10px;
+        }
+    }
+}
 /* 首页 */
 .section-bgimg
 {
@@ -670,7 +778,33 @@ body
     {
         line-height: 50px;
 
+        position: relative;
+
         width: 50%;
+        .select-list
+        {
+            position: absolute;
+            z-index: 222;
+            top: 55px;
+            left: 5%;
+
+            width: 90%;
+
+            background: #fff;
+
+            @include shadow(2px 2px 4px #ccc);
+            a
+            {
+                font-size: 1em;
+                line-height: 40px;
+
+                display: block;
+
+                height: 40px;
+
+                color: map-get($colorMaps,black);
+            }
+        }
         span
         {
             position: relative;
@@ -706,6 +840,7 @@ body
         }
     }
 }
+
 .section-new-box
 {
     margin: 20px 0;
@@ -737,6 +872,52 @@ body
         padding: 0 10px;
     }
 }
+.section-new-info
+{
+    position: relative;
+
+    margin: 20px 0;
+    padding: 20px 0;
+
+    background: #fff;
+    h3
+    {
+        font-size: 1.2em;
+        font-weight: bolder;
+
+        margin: 20px 0;
+
+        color: #222;
+    }
+    p
+    {
+        font-size: .95em;
+        line-height: 20px;
+
+        text-indent: 33px;
+    }
+    #close-news
+    {
+        line-height: 20px;
+
+        position: absolute;
+        top: 10px;
+        right: 20px;
+
+        display: block;
+
+        width: 20px;
+        height: 20px;
+
+        cursor: pointer;
+        text-align: center;
+
+        color: map-get($colorMaps,blue);
+        border: 1px solid map-get($colorMaps,blue);
+
+        @include radius(50%);
+    }
+}
 /* 页脚 */
 .footer
 {
@@ -761,7 +942,7 @@ body
     background: url('../img/join-banner.jpg') no-repeat center center;
     background-size: 90% 200px;
 }
-
+/* 加入我们 */
 .section-join-info
 {
     .join-line

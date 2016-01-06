@@ -324,5 +324,18 @@
 	<script type="text/javascript" src="dist/js/zepto.min.js"></script>
 	<script type="text/javascript" src="dist/js/swiper-3.2.7.jquery.min.js"></script>
 	<script type="text/javascript" src="dist/js/app-mobile.js"></script>
+	<script type="text/javascript">
+		//轮播图
+		var swiper = new Swiper('.swiper-container', {
+		 pagination: '.swiper-pagination',
+		 nextButton: '.swiper-button-next',
+		 prevButton: '.swiper-button-prev',
+		 paginationClickable: true,
+		 centeredSlides: true,
+		 autoplay: 5000,
+		 loop: true,
+		 autoplayDisableOnInteraction: false
+		});
+	</script>
 </body>
 </html>
