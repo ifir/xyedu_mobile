@@ -17,6 +17,14 @@ body {
   text-align: right;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .pull-left {
   float: left;
 }
@@ -133,10 +141,10 @@ body {
   z-index: 100000;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background: #fff;
-  height: 50px;
   overflow: hidden;
+  width: 100%;
+  height: 50px;
+  background: #fff;
   -webkit-box-shadow: 0 1px 2px #ccc;
   -moz-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
@@ -148,18 +156,20 @@ body {
 }
 
 .nav-consult a {
-  color: #fff;
   font-size: 1.1em;
+  color: #fff;
 }
 
-.nav-consult .msg-consult, .nav-consult .tel-consult {
-  width: 50%;
-  display: block;
-  height: 50px;
+.nav-consult .msg-consult,
+.nav-consult .tel-consult {
   line-height: 50px;
+  display: block;
+  width: 50%;
+  height: 50px;
 }
 
-.nav-consult .msg-consult img, .nav-consult .tel-consult img {
+.nav-consult .msg-consult img,
+.nav-consult .tel-consult img {
   width: 30px;
   height: 30px;
   vertical-align: middle;
@@ -324,9 +334,9 @@ body {
 }
 
 .section-teachers .photo-info .introduce p {
-  margin: 20px 0;
   font-size: .8em;
   line-height: 16px;
+  margin: 20px 0;
 }
 
 /* 独家保障 */
@@ -335,9 +345,9 @@ body {
 }
 
 .section-ensure span {
+  font-size: .8em;
   margin: 5px;
   color: #3296ba;
-  font-size: .8em;
 }
 
 .section-ensure .ensure-box {
@@ -354,8 +364,8 @@ body {
 }
 
 .section-ensure .ensure-box h4 {
-  color: #3296ba;
   font-size: .9em;
+  color: #3296ba;
 }
 
 /* 推荐课程 */
@@ -518,6 +528,96 @@ body {
   width: 31.333333%;
   height: 80px;
   background: #ffd452;
+}
+
+/* 新闻咨询 */
+/* 轮播图 */
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 200px;
+}
+
+/* 咨询标题 */
+.section-nav-news {
+  height: 50px;
+  background: #fff;
+}
+
+.section-nav-news .pull-left {
+  line-height: 50px;
+  width: 50%;
+}
+
+.section-nav-news .pull-left span {
+  position: relative;
+  color: #656565;
+}
+
+.section-nav-news .pull-left span:after, .section-nav-news .pull-left span:before {
+  position: absolute;
+  right: -25px;
+  display: block;
+  content: '';
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.section-nav-news .pull-left span:before {
+  z-index: 5;
+  top: 6px;
+  border-top: 10px solid #fff;
+}
+
+.section-nav-news .pull-left span:after {
+  z-index: 1;
+  top: 7px;
+  border-top: 10px solid #222;
+}
+
+.section-new-box {
+  margin: 20px 0;
+  padding: 20px 0;
+  background: #fff;
+}
+
+.section-new-box img {
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+  vertical-align: middle;
+}
+
+.section-new-box a {
+  font-size: 1em;
+  line-height: 25px;
+  display: block;
+  overflow: hidden;
+  height: 30px;
+  color: #656565;
+}
+
+.section-new-box .hide {
+  padding: 0 10px;
 }
 
 /* 页脚 */
@@ -812,4 +912,11 @@ body {
 
 .vis {
   visibility: visible;
+}
+
+@media screen and (max-width: 1000px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
 }

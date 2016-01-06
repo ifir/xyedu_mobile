@@ -54,6 +54,14 @@ body
 {
     text-align: right;
 }
+.hide
+{
+    display: none;
+}
+.show
+{
+    display: block;
+}
 .pull-left
 {
     float: left;
@@ -169,39 +177,52 @@ body
     }
 }
 /* 电话咨询 */
-.nav-consult{
+.nav-consult
+{
     position: absolute;
     z-index: 100000;
     bottom: 0;
     left: 0;
 
+    overflow: hidden;
+
     width: 100%;
+    height: 50px;
 
     background: #fff;
-    height: 50px;
-    overflow: hidden;
+
     @include shadow(0 1px 2px #ccc);
     @include transition(transform .5s ease);
-    a{
-        color: #fff;
+    a
+    {
         font-size: 1.1em;
+
+        color: #fff;
     }
-    .msg-consult, .tel-consult{
-        width: 50%;
-        display:block;
-        height: 50px;
+    .msg-consult,
+    .tel-consult
+    {
         line-height: 50px;
-        img{
+
+        display: block;
+
+        width: 50%;
+        height: 50px;
+        img
+        {
             width: 30px;
             height: 30px;
+
             vertical-align: middle;
         }
     }
-    .msg-consult{
-         background:map-get($colorMaps,yellow);
+    .msg-consult
+    {
+        background: map-get($colorMaps,yellow);
     }
-    .tel-consult{
-        background:map-get($colorMaps,blue);
+    .tel-consult
+    {
+        background: map-get($colorMaps,blue);
     }
 }
 
@@ -372,10 +393,12 @@ body
 
                 border-bottom: 1px solid map-get($colorMaps,yellow);
             }
-            p{
-                margin:20px 0;
+            p
+            {
                 font-size: .8em;
                 line-height: 16px;
+
+                margin: 20px 0;
             }
         }
     }
@@ -383,15 +406,14 @@ body
 /* 独家保障 */
 .section-ensure
 {
-    padding:20px 0 10px 0;
+    padding: 20px 0 10px 0;
     span
     {
-        margin:5px;
-
-        color: map-get($colorMaps,blue);
-
         font-size: .8em;
 
+        margin: 5px;
+
+        color: map-get($colorMaps,blue);
     }
     .ensure-box
     {
@@ -407,8 +429,9 @@ body
         }
         h4
         {
-            color: map-get($colorMaps,blue);
             font-size: .9em;
+
+            color: map-get($colorMaps,blue);
         }
     }
 }
@@ -608,8 +631,112 @@ body
         background: #ffd452;
     }
 }
+/* 新闻咨询 */
+/* 轮播图 */
+.swiper-container
+{
+    width: 100%;
+}
+.swiper-slide
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display:         flex;
 
+    text-align: center;
 
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+}
+.swiper-slide img
+{
+    width: 100%;
+    height: 200px;
+}
+/* 咨询标题 */
+.section-nav-news
+{
+    height: 50px;
+
+    background: #fff;
+    .pull-left
+    {
+        line-height: 50px;
+
+        width: 50%;
+        span
+        {
+            position: relative;
+
+            color: map-get($colorMaps,black);
+            &:after,
+            &:before
+            {
+                position: absolute;
+                right: -25px;
+
+                display: block;
+
+                content: '';
+
+                border-right: 10px solid transparent;
+                border-left: 10px solid transparent;
+            }
+            &:before
+            {
+                z-index: 5;
+                top: 6px;
+
+                border-top: 10px solid #fff;
+            }
+            &:after
+            {
+                z-index: 1;
+                top: 7px;
+
+                border-top: 10px solid #222;
+            }
+        }
+    }
+}
+.section-new-box
+{
+    margin: 20px 0;
+    padding: 20px 0;
+
+    background: #fff;
+    img
+    {
+        width: 20px;
+        height: 20px;
+        margin-top: -4px;
+
+        vertical-align: middle;
+    }
+    a
+    {
+        font-size: 1em;
+        line-height: 25px;
+
+        display: block;
+        overflow: hidden;
+
+        height: 30px;
+
+        color: map-get($colorMaps,black);
+    }
+    .hide
+    {
+        padding: 0 10px;
+    }
+}
 /* 页脚 */
 .footer
 {
@@ -951,6 +1078,11 @@ body
     visibility: visible;
 }
 
-@media screen and (max-width: 320px)
+@media screen and (max-width: 1000px)
 {
+    .swiper-button-next,
+    .swiper-button-prev
+    {
+        display: none;
+    }
 }

@@ -1,12 +1,13 @@
 $(function(){
 	//侧边栏事件
+	var silderEles = $('#main-content,#nav-header,#nav-consult');
 	$('#tool').on('click', function(){
-		$('#main-content,#nav-header,#nav-consult').addClass('open');
+		silderEles.addClass('open');
 		$('#tool-box').addClass('vis');
 		$('#mask').show().addClass('open');
 	})
 	$('#mask').on('click', function(){
-		$('#main-content,#nav-header,#nav-consult').removeClass('open');
+		silderEles.removeClass('open');
 		setTimeout(function(){
 			$('#tool-box').removeClass('vis');
 		},500);
@@ -36,6 +37,18 @@ $(function(){
 		var popup = $('.popup, .mask-popup');
 		popup.hide();
 	})
+	//轮播图
+	$('#swiper-container,#swiper-container img').css('height','200px')
+	var swiper = new Swiper('.swiper-container', {
+	 pagination: '.swiper-pagination',
+	 nextButton: '.swiper-button-next',
+	 prevButton: '.swiper-button-prev',
+	 paginationClickable: true,
+	 centeredSlides: true,
+	 autoplay: 5000,
+	 loop: true,
+	 autoplayDisableOnInteraction: false
+	});
 
 })
 
