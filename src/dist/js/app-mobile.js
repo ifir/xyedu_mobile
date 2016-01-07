@@ -5,14 +5,14 @@ $(function(){
 		silderEles.addClass('open');
 		$('#tool-box').addClass('vis');
 		$('#mask').show().addClass('open');
-	})
+	});
 	$('#mask').on('click', function(){
 		silderEles.removeClass('open');
 		setTimeout(function(){
 			$('#tool-box').removeClass('vis');
 		},500);
 		$('#mask').hide().removeClass('open');
-	})
+	});
 
 	//职位招聘
 	var jobList = new List({
@@ -20,7 +20,7 @@ $(function(){
 		con: $('#job-box-ul .job-explain'),
 		cur: 'list-active',
 		showed: 'openheight'
-	})
+	});
 
 	/*弹出框关闭*/
 
@@ -31,7 +31,7 @@ $(function(){
 		}else{
 			popup.show();
 		}
-	})
+	});
 
 	$('.mask-popup, .close-btn').on('click', function (){
 		var popup = $('.popup, .mask-popup');
@@ -41,11 +41,14 @@ $(function(){
 	//院校咨询&教育咨询
 	$('#school-btn, #edu-btn').on('click', function(e){
 		var listItems = $(this).find('.select-list');
+		$('.select-list').removeClass('show');
 		listItems.addClass('show');
 		listItems.find('li').each(function(index){
 			var con =$('#all-news-box .hide');
 			$(this).on('click', function(e){
 				$('.select-list').removeClass('show');
+				$('#all-news-info').removeClass('show');
+				$('#all-news-box').addClass('show');
 				con.removeClass('show');
 				con.eq(index).addClass('show');
 				e.stopPropagation();
@@ -56,13 +59,7 @@ $(function(){
 	$('#all-news-box').on('click', 'li', function(){
 		$('#all-news-box').removeClass('show');
 		$('#all-news-info').addClass('show');
-	})
-	/*$('.select-list').on('click', 'li', function(e){
-		$('.select-list').removeClass('show');
-		$('#all-news-box').removeClass('show');
-		$('#all-news-info').addClass('show');
-		e.stopPropagation();
-	});*/
+	});
 
 	$('#close-news').on('click', function(){
 		$('#all-news-info').removeClass('show');
