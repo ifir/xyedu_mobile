@@ -1,4 +1,49 @@
 $(function(){
+	//课程年份显示
+
+	var data= [
+		['2016.01', '名校MBA校友分享学习经验,向优秀的人学习'],
+		['2016.02', '独门秘笈轻松闯过单词关,英语考试so easy'],
+		['2016.03', '西游带你做公益,大爱无疆,从心出发'],
+		['2016.04', '组建班委会,凝心聚力,携手前进,目标必达'],
+		['2016.05', '艺术品鉴赏,丰富生活体验,提升个人修养'],
+		['2016.06', '西游带你做公益续,一份关爱,一份收获'],
+		['2016.07', '社交技巧指导,一点风度＋一份得体'],
+		['2016.08', '红酒品鉴课堂,高端体验精品生活'],
+		['2016.09', '面试技巧,模拟实战全过程'],
+		['2016.10', '学习分享会,交流学习体会,吸取经验'],
+		['2016.11', '心理专家辅导,积极调整心态,轻松过考试'],
+		['2016.12', '考前激励,梦想成真']
+	];
+	var timer1=null,
+		yearIndex = 0,
+		leftYear = $('.left-center label'),
+		rightYear = $('.right-center label'),
+		centerYear = $('.center .center-label'),
+		hisInfo = $('#his-info');
+		leftYear.text(data[11][0]);
+		centerYear.text(data[0][0]);
+		rightYear.text(data[1][0]);
+		hisInfo.text(data[0][1]);
+	timer = setInterval(function(){
+		yearIndex ++ ;
+		if(yearIndex<12){
+			var ly = yearIndex - 1 < 0 ? 11 : yearIndex - 1;
+			var ry = yearIndex + 1 > 11 ? 1 : yearIndex + 1;
+			leftYear.text(data[ly][0]);
+			centerYear.text(data[yearIndex][0]);
+			rightYear.text(data[ry][0]);
+			hisInfo.text(data[yearIndex][1]);
+		}else{
+			yearIndex = 0;
+			leftYear.text(data[11][0]);
+			centerYear.text(data[0][0]);
+			rightYear.text(data[1][0]);
+			hisInfo.text(data[0][1]);
+		}
+
+	},3000);
+
 	//侧边栏事件
 	var silderEles = $('#main-content,#nav-header,#nav-consult');
 	$('#tool').on('click', function(){
@@ -43,12 +88,18 @@ $(function(){
 		var listItems = $(this).find('.select-list');
 		$('.select-list').removeClass('show');
 		listItems.addClass('show');
+		var dir=$(this).attr('id');
+		if(dir === 'school-btn'){
+			dir = 'school';
+		}else{
+			dir = 'edu';
+		}
 		listItems.find('li').each(function(index){
-			var con =$('#all-news-box .hide');
+			var con =$('#all-news-box-'+dir+' .hide');
 			$(this).on('click', function(e){
+				$('.section-new-box').removeClass('show');
 				$('.select-list').removeClass('show');
-				$('#all-news-info').removeClass('show');
-				$('#all-news-box').addClass('show');
+				$('#all-news-box-'+dir).addClass('show');
 				con.removeClass('show');
 				con.eq(index).addClass('show');
 				e.stopPropagation();
@@ -58,11 +109,9 @@ $(function(){
 	});
 	$('#all-news-box').on('click', 'li', function(){
 		$('#all-news-box').removeClass('show');
-		$('#all-news-info').addClass('show');
 	});
 
 	$('#close-news').on('click', function(){
-		$('#all-news-info').removeClass('show');
 		$('#all-news-box').addClass('show');
 	});
 	$('body').on('click', function(){
@@ -70,9 +119,6 @@ $(function(){
 	});
 
 })
-
-
-
 
 function List(opt){
 	this.ele = opt.ele;

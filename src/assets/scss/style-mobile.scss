@@ -16,6 +16,14 @@ $colorMaps: (blue:#3296ba,yellow:#f39801,black:#656565);
          -o-transform: translate3d($value);
             transform: translate3d($value);
 }
+@mixin scale3d($value...)
+{
+    -webkit-transform: scale3d($value);
+       -moz-transform: scale3d($value);
+        -ms-transform: scale3d($value);
+         -o-transform: scale3d($value);
+            transform: scale3d($value);
+}
 
 @mixin radius($value...)
 {
@@ -889,6 +897,12 @@ body
 
         color: #222;
     }
+    h4
+    {
+        font-size: .9em;
+
+        color: map-get($colorMaps,black);
+    }
     p
     {
         font-size: .95em;
@@ -901,7 +915,7 @@ body
         line-height: 20px;
 
         position: absolute;
-        top: 10px;
+        top: 15px;
         right: 20px;
 
         display: block;
